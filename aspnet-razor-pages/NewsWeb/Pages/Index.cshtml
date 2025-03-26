@@ -1,0 +1,24 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<main>
+    <h2>All Articles</h2>
+    <div class="article-list">
+        <partial name="Shared/_List" model="Model.Articles"/>
+    </div>
+</main>
+<footer>
+    <h2>Add a New Article</h2>
+    <form
+        method="post"
+        hx-target=".article-list"
+        hx-push-url="false"
+        hx-swap="show:none">
+        <input type="text" name="name" placeholder="Article Name" required />
+        <textarea name="body" placeholder="Article Body" required></textarea>
+        <button class="btn" type="submit">Add Article</button>
+    </form>
+</footer>

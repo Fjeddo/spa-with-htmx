@@ -1,0 +1,11 @@
+﻿@page "/articles/{id:int}"
+@model NewsWeb.Pages.ArticleModel
+@{
+    ViewData["Title"] = Model.Article!.name;
+}
+
+<main>
+    <h2>@Model.Article.name</h2>
+    <p>@Model.Article.body</p>
+    <a href="/">Back to all Articles</a>
+</main>

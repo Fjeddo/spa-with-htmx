@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NewsWeb</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body hx-boost="true" hx-indicator=".loader">
+    <header>
+        <nav>
+            <img src="/shuriken.png" />
+            <h1>The Dojo Chronicles</h1>
+        </nav>
+    </header>
+
+    <div hx-history-elt>
+        @RenderBody()
+    </div>
+
+    <partial name="_Loader" />
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
